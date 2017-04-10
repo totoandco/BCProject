@@ -49,36 +49,46 @@ Here is an example of one interaction client/server:
 
 After the client makes a connection to the server :
 
-* The Handshake :
+### The Handshake :
+
 Client: HELO
+
 Timeout 5 seconds
+
 Server: HI
  
 After the server replies "HI", the handshakes is considered as successful.
 After a successful handshake the server accepts the rest of the available commands:
 
-* Command COUNT:
+### Command COUNT:
 
 Client: COUNT
+
 Server Response: 22 
 
-* Command CONNECTIONS:
+### Command CONNECTIONS:
 
 Client: CONNECTIONS
+
 Server Response: 4
 
-* Command PRIME:
+### Command PRIME:
 
 Client: PRIME
+
 Server Response: 142357
 
-* Command TERMINATE (initiating the disconnection):
+### Command TERMINATE (initiating the disconnection):
 
 Client: TERMINATE
+
 Server Response: BYE
+
 Disconnection
 
-## Technologies used :
+## Technologies used
+
+This project is using the following technologies : 
 
 * C#/.NET
 * MS unit test
