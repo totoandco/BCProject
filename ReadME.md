@@ -111,6 +111,7 @@ I used the design pattern strategy to implement the answers of the server becaus
 ## The use of a list for the client's sockets
 
 I used a list to store the client sockets. this wasn't specified in the specifications, however, because the Socket class is an unmanaged class, I wanted to be sure to be able to dispose them if needed.
+
 This is also why during a connection and after a "CONNECTIONS" command I'm checking this list in order to close the Sockets not connected. Plus , I'm keeping up to date the number of current connexions on the server (as requested).
 
 ## Extraction of the strings in static classes
@@ -121,6 +122,7 @@ The classes "AvailableAnswers" and "AvailableCommands" have been created in orde
 * they are easy to locate,
 * we can change the values without reviewing all the code,
 * we can add other commands.
+
  I preferred to use these classes instead of a resource file (which can be created in the project's properties) because :
 * these strings were not long,
 * it adds more clarity in the code (because their names are self-explanatory).
@@ -144,7 +146,9 @@ As the emission/reception of TCP Packets can be hard to mock and unit tests, I'v
 # Trade off , or what I might do differently if I were to spend additional time on the project
 
 If I were to spend additional time on the project , I would have considered to use a solution based on the SocketAsyncEventArgs class in order to see the differences with my current solution.
-Another thing I would implement is a logging system (log files) as a in production environment it's a nice feature to have because:
+
+Another thing I would implement is a logging system (log files) as in production environment it's a nice feature to have because:
 * it allows the level 1/2 support to quickly investigate what's happening on the server without reviewing the code,
 * the development team knows exactly where the code breaks.
+
 All I did in this version (because a logging system was not required) is to print the errors on the server's console.
